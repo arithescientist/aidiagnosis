@@ -1,7 +1,14 @@
-# Copyright Jonathan Hartley 2013. BSD 3-Clause license, see LICENSE file.
-from .initialise import init, deinit, reinit, colorama_text
-from .ansi import Fore, Back, Style, Cursor
-from .ansitowin32 import AnsiToWin32
+from __future__ import absolute_import, division, unicode_literals
 
-__version__ = '0.3.9'
+from .py import Trie as PyTrie
 
+Trie = PyTrie
+
+# pylint:disable=wrong-import-position
+try:
+    from .datrie import Trie as DATrie
+except ImportError:
+    pass
+else:
+    Trie = DATrie
+# pylint:enable=wrong-import-position
