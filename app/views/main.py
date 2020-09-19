@@ -2,8 +2,6 @@ from flask import render_template, jsonify, Flask, redirect, url_for, request
 from app import app
 import random
 import os
-pip uninstall keras
-pip install keras
 from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.applications.resnet50 import preprocess_input, decode_predictions
