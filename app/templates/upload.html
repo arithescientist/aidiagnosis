@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+	
+<div>
+	<a href="upload.html">Detect Lung Disease</a>
+</div>
+
+<div>
+<form action = "/uploaded_chest" method = "post" enctype="multipart/form-data">  
+<label for="file-upload_1" id="label_1" style="margin-top: 8px; margin-right: 10px;">
+	Select Image
+</label>
+	<input type="file" name="file" id="file-upload_1" onchange="showname()"/>  
+	<input type = "submit" value="Upload">  
+</form>
+</div>  
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+
+</body>
+</html>
+  
+{% endblock %}

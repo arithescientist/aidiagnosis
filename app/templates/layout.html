@@ -26,6 +26,8 @@
 				  	{{ m.nav_link('index', 'Home') }}
 				  	{{ m.nav_link('map', 'Map') }}
 					{{ m.nav_link('contact', 'Contact') }}
+					{{ m.nav_link('upload', 'Demo') }}
+					
 				 	<div class="right menu">
 				 		<!-- User is logged in -->
 				      	{% if current_user.is_authenticated %}
@@ -37,6 +39,7 @@
 				    		</div>
 			          	<!-- User is not logged in -->
 			          	{% else %}
+						
 			          		<div class="item">
 				        		<a class="ui primary button" href="/user/signin">Sign in</a>
 				    		</div>
