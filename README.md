@@ -79,6 +79,32 @@ I have included a working mail account which takes my email and password I've se
 
 Read [this](http://flask.pocoo.org/docs/0.10/config/) for information on the possible configuration options.
 
+## [Modelling](./student.ipynb)
+The network used is VGG16 because it’s known for having pretty high accuracies for image classification problems so I have no doubt it would work perfectly for my problem. 
+After importing my VGG16 model and set the appropriate weights for the type of images in the dataset and set the Include Top parameter to false.
+This will ensure that the last layer is drop and I did this because I don’t want to classify thousand different categories when my specific problem only has two categories. So, for this I skip the last layer. The first layer is also dropped since I can simply provide my own image size as I did.
+
+## Interpretion
+The accuracy is 91 % and this is the amount of time the predicted result is actually correct.
+
+The recall percentage is 90% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
+ 
+  <img src='images/cm.PNG' width='80%'/>
+
+The model loss is 0.2 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+
+  <img src='images/loss.PNG' width='80%'/>
+
+The AUC score is 0.89 and this is the average probability that the model can diagnose each X-ray image correctly.
+
+  <img src='images/roc.PNG' width='80%'/>
+
+
+## Recommendation
+The recall score will be the main metric for this project since it’s the most important metric in medical problems given that - doctors will rather make a wrong positive diagnosis than make a wrong negative. 
+
+Health professionals are welcomed to integrate this model, after thorough verification, into their medical software to help them correctly diagnose pneumonia.
+
 ## License
 
 The MIT License (MIT). Please see the [license file](LICENSE) for more information.
