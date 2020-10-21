@@ -1,9 +1,8 @@
 # iDiagnosis Flask Web App
   <img src='screenshots/Upload.png' width='80%'/>
   <img src='screenshots/Result1.png' width='80%'/>
-## Amazon EC2 Link 
 
-http://ec2-3-138-170-205.us-east-2.compute.amazonaws.com:5000/demo
+Amazon EC2 Link - http://ec2-3-138-170-205.us-east-2.compute.amazonaws.com:5000/demo
 
 ## Features
 
