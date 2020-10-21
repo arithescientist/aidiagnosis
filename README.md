@@ -1,6 +1,6 @@
 # iDiagnosis Flask Web App
-  <img src='Upload/cm.PNG' width='80%'/>
-  <img src='Result1/cm.PNG' width='80%'/>
+  <img src='screenshots/Upload.PNG' width='80%'/>
+  <img src='screenshots/Result1.PNG' width='80%'/>
 
 ## Features
 
