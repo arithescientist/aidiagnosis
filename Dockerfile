@@ -15,7 +15,7 @@ ENV LC_ALL en_US.UTF-8
 RUN apt-get update && apt-get install -y \
     build-essential \
     python3-pip
-    
+
 RUN apt-get update ##[edited]
 RUN apt-get install 'ffmpeg'\
     'libsm6'\ 

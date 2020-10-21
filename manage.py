@@ -1,3 +1,4 @@
+  
 from flask_script import Manager, prompt_bool, Shell, Server
 from termcolor import colored
 
