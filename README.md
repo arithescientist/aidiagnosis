@@ -81,7 +81,7 @@ I have included a working mail account which takes my email and password I've se
 
 Read [this](http://flask.pocoo.org/docs/0.10/config/) for information on the possible configuration options.
 
-## [Modelling]
+## Modelling
 The network used is VGG16 because it’s known for having pretty high accuracies for image classification problems so I have no doubt it would work perfectly for my problem. 
 After importing my VGG16 model and set the appropriate weights for the type of images in the dataset and set the Include Top parameter to false.
 This will ensure that the last layer is drop and I did this because I don’t want to classify thousand different categories when my specific problem only has two categories. So, for this I skip the last layer. The first layer is also dropped since I can simply provide my own image size as I did.
