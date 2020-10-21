@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chest X-ray Detection Results | COVID-19 Detector</title>
+
+    <!-- plugin scripts -->
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h3 class="display-4">iDiagnosis</h3>
+    <h2 class="display-4">Result</h2>
+    <p class="lead">Prototype Version</p>
+    </div>
+    <div class="page-wrapper">
+
+        <section class="about-three">
+            <div class="container">
+
+                <div class="col-lg-12">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-{{color}}">{{status}}</strong>
+                            <h3 class="mb-0">{{predictions}}</h3>
+                            <div class="mt-2 text-muted">
+                                <p>
+                                    <script>
+                                        var today = new Date()
+                                        document.write(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today
+                                            .getDate() + ', ' + today.getHours() + ":" + today.getMinutes() + ":" +
+                                            today.getSeconds())
+                                    </script>
+                                </p>
+                            </div>
+                            <p class="mb-auto">{{message}} <strong>{{result}}</strong></p>
+                     <!--        <a href="/upload.html" class="stretched-link text-danger">Test another image</a> -->
+                        </div>
+          <!--               <div>
+                            <img src="assets/images/upload_chest.jpg" width="280" height="250">
+                        </div> -->
+                    </div>
+                </div>
+
+            </div><!-- /.container -->
+        </section><!-- /.about-three -->
+    </div>
+
+
+
+
+</body>
+
+</html>
+{% endblock %}
+
+
