@@ -44,7 +44,7 @@ def upload_covid():
 def upload_pneumonia():
     return render_template('upload_covid.html')
 
-
+modelcp = load_model('./app/views/models/modelcnp.h5')
 @app.route('/uploadedcnp', methods = ['POST', 'GET'])
 def uploaded_chest():
     if request.method == 'POST':
@@ -63,15 +63,14 @@ def uploaded_chest():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'upload_chest.jpg'))
 
     # resnet_chest = load_model('')
-    model = load_model('./app/views/models/modelcnp.h5')
-
+    
     image = cv2.imread('./app/views/uploads/upload_chest.jpg') # read file 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # arrange format as per keras
-    image = cv2.resize(image,(224,224))
+    image = cv2.resize(image,(64,64))
     image = np.array(image) / 255
     image = np.expand_dims(image, axis=0)
 
-    pred = model.predict(image)
+    pred = modelcp.predict(image)
     probability = pred[0]
     print("Model Predictions:")
     color = ""
@@ -79,7 +78,7 @@ def uploaded_chest():
     message= ""
     result = ""
     if probability[0] > 0.5:
-        pred = str('%.2f' % (probability[0]*100) + '% COVID') 
+        pred = str('%.2f' % ((probability[0])*100) + '% COVID') 
         color = "danger"
         status = "COVID-19"
         message="The Model found it "
@@ -94,7 +93,7 @@ def uploaded_chest():
 
     return render_template('results.html',predictions=pred, color=color, status=status, message=message, result=result)
 
-
+modelc = load_model('./app/views/models/modelcnd.h5')
 @app.route('/uploadedcnd', methods = ['POST', 'GET'])
 def uploaded_covid():
     if request.method == 'POST':
@@ -113,15 +112,14 @@ def uploaded_covid():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'upload_chest.jpg'))
 
    # resnet_chest = load_model('')
-    model = load_model('./app/views/models/modelcnd.h5')
-
+    
     image = cv2.imread('./app/views/uploads/upload_chest.jpg') # read file 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # arrange format as per keras
-    image = cv2.resize(image,(224,224))
+    image = cv2.resize(image,(64,64))
     image = np.array(image) / 255
     image = np.expand_dims(image, axis=0)
 
-    pred = model.predict(image)
+    pred = modelc.predict(image)
     probability = pred[0]
     print("Model Predictions:")
     color = ""
@@ -129,7 +127,7 @@ def uploaded_covid():
     message= ""
     result = ""
     if probability[0] > 0.5:
-        pred = str('%.2f' % (probability[0]*100) + '% COVID') 
+        pred = str('%.2f' % ((probability[0])*100) + '% COVID') 
         color = "danger"
         status = "COVID-19"
         message="The Model found it "
@@ -144,7 +142,7 @@ def uploaded_covid():
 
     return render_template('results.html',predictions=pred, color=color, status=status, message=message, result=result)
 
-
+modelp = load_model('./app/views/models/modelpnd.h5')
 @app.route('/uploadedpnd', methods = ['POST', 'GET'])
 def uploaded_pneumonia():
     if request.method == 'POST':
@@ -163,29 +161,29 @@ def uploaded_pneumonia():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'upload_chest.jpg'))
 
    # resnet_chest = load_model('')
-    model = load_model('./app/views/models/modelpnd.h5')
+    
 
     image = cv2.imread( './app/views/uploads/upload_chest.jpg') # read file 
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) # arrange format as per keras
-    image = cv2.resize(image,(224,224))
+    image = cv2.resize(image,(64,64))
     image = np.array(image) / 255
     image = np.expand_dims(image, axis=0)
 
-    vgg_pred = model.predict(image)
+    pred = modelp.predict(image)
     probability = pred[0]
     print("Model Predictions:")
     color = ""
     status = ""
     message= ""
     result = ""
-    if probability[0] > 0.5:
-        pred = str('%.2f' % (probability[0]*100) + '% PNEUMONIA') 
+    if probability[0] < 0.5:
+        pred = str('%.2f' % ((1-probability[0])*100) + '% PNEUMONIA') 
         color = "danger"
         status = "Pneumonia"
         message="The Model found it "
         result = "Pneumonia Positive "
     else:
-        pred = str('%.2f' % ((1-probability[0])*100) + '% NON-PNEUMONIA')
+        pred = str('%.2f' % ((probability[0])*100) + '% NON-PNEUMONIA')
         color = "success"
         status = "Normal"
         message="The Model found it "

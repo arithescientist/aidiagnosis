@@ -1,8 +1,4 @@
 # iDiagnosis Flask Web App
-  <img src='screenshots/Upload.png' width='80%'/>
-  <img src='screenshots/Result1.png' width='80%'/>
-
-Amazon EC2 Link - http://ec2-3-138-170-205.us-east-2.compute.amazonaws.com:5000/demo
 
 ## Features
 
@@ -67,11 +63,11 @@ Everything is contained in the `app/` folder.
 
 - Create the database.
 
-	`python3 manage.py initdb`
+	`python manage.py initdb`
 
 - Run the application.
 
-	`python3 manage.py runserver`
+	`python manage.py runserver`
 
 - Navigate to `localhost:5000`.
 
@@ -82,32 +78,6 @@ The goal is to keep most of the application's configuration in a single file cal
 I have included a working mail account which takes my email and password I've securedly stored in my environment so you would need to set up an environment password for your mailing account to be able to send emails [here](https://exploreflask.com/configuration.html).
 
 Read [this](http://flask.pocoo.org/docs/0.10/config/) for information on the possible configuration options.
-
-## Modelling
-The network used is VGG16 because it’s known for having pretty high accuracies for image classification problems so I have no doubt it would work perfectly for my problem. 
-After importing my VGG16 model and set the appropriate weights for the type of images in the dataset and set the Include Top parameter to false.
-This will ensure that the last layer is drop and I did this because I don’t want to classify thousand different categories when my specific problem only has two categories. So, for this I skip the last layer. The first layer is also dropped since I can simply provide my own image size as I did.
-
-## Interpretion
-The accuracy is 91 % and this is the amount of time the predicted result is actually correct.
-
-The recall percentage is 90% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
- 
-  <img src='screenshots/cm.PNG' width='80%'/>
-
-The model loss is 0.2 out and this is the amount the model penalizes for incorrect predictions ~ 10%
-
-  <img src='screenshots/loss.PNG' width='80%'/>
-
-The AUC score is 0.89 and this is the average probability that the model can diagnose each X-ray image correctly.
-
-  <img src='screenshots/roc.PNG' width='80%'/>
-
-
-## Recommendation
-The recall score will be the main metric for this project since it’s the most important metric in medical problems given that - doctors will rather make a wrong positive diagnosis than make a wrong negative. 
-
-Health professionals are welcomed to integrate this model, after thorough verification, into their medical software to help them correctly diagnose pneumonia.
 
 ## License
 
