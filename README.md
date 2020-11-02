@@ -3,7 +3,9 @@
 ### Diagnosing Lung Diseases Using AI
 <a href="https://github.com/ariavathlete/aidiagnosis/blob/master/Clinical%20Case%20of%20Lung%20Disease.pdf">PRESENTATION</a>
 <a href="https://github.com/ariavathlete/aidiagnosis/blob/master/Diagnosing_Pneumonia_Blog.pdf">| BLOG</a>
+<a href="https://aridavinci.com:5000">| BLOG</a>
 
+   Amazon EC2 Link - http://ec2-18-221-241-166.us-east-2.compute.amazonaws.com:5000/
   <img src='images/blue.PNG' width='50%'/>
   
  # Table Of Contents
