@@ -22,8 +22,8 @@
 * [Future Work](#future-work)
   
  ## Preview
-  <img src='screnshots/upload.png' width='50%'/>
-  <img src='screnshots/result1.png' width='50%'/>
+  <img src='screenshots/upload.png' width='50%'/>
+  <img src='screenshots/result1.png' width='50%'/>
   
 ## Purpose
 The purpose of this research is to build a classifier that can correctly distinguish between Pneumonia and Covid-19. Why lung diseases?
