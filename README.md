@@ -13,7 +13,7 @@
 * [Model](#model)
 * [Covid-19 Models Results](#covid-19-models-results)
 * [Pneumonia Models Results](#pneumonia-models-results)
-* [Pneumonia vs Covid-19 Models Results](#pneumonia-vs-covid-19-models-Results)
+* [Pneumonia vs Covid-19 Models Results](#pneumonia-vs-covid-19-models-results)
 * [Recommendation](#recommendation)
 * [Web App Features](#web-app-features)
 * [Web App Structure](#web-app-structure)
@@ -82,7 +82,7 @@ After that, I inserted the images using flow. My parameters are; 32 images shoul
 
 I go on and apply the same parameters I used for my training dataset to my test dataset and then I call my fit 100 epochs.
 
-## [Covid-19 Models Results](./COVID19 vs Normal.ipynb)
+## [Covid-19 Models Results](./covid_vs_normal.ipynb)
 The accuracy is 98 % and this is the amount of time the predicted result is actually correct.
 
 The recall percentage is 98% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
@@ -97,7 +97,7 @@ The AUC score is 0.98 and this is the average probability that the model can dia
 
   <img src='images/roc_covid.PNG' width='50%'/>
   
-## [Pneumonia Models Results](./Pneumonia vs Normal.ipynb)
+## [Pneumonia Models Results](./pneumonia_vs_normal.ipynb)
 The accuracy is 95 % and this is the amount of time the predicted result is actually correct.
 
 The recall percentage is 95% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
@@ -112,7 +112,7 @@ The AUC score is 0.95 and this is the average probability that the model can dia
 
   <img src='images/roc_pne.PNG' width='50%'/>
 
-## [Pneumonia vs Covid-19 Models Results](./Pneumonia vs COVID19.ipynb)
+## [Pneumonia vs Covid-19 Models Results](./pneumonia_vs_covid.ipynb)
 The accuracy is 95 % and this is the amount of time the predicted result is actually correct.
 
 The recall percentage is 95% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
