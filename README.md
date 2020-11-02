@@ -1,6 +1,6 @@
 # iDiagnosis Flask Web App
 
-### Diagnosing Pneumonia Using AI
+### Diagnosing Lung Diseases Using AI
 <a href="https://github.com/ariavathlete/aidiagnosis/blob/master/Clinical%20Case%20of%20Lung%20Disease.pdf">PRESENTATION</a>
 <a href="https://github.com/ariavathlete/aidiagnosis/blob/master/Diagnosing_Pneumonia_Blog.pdf">| BLOG</a>
 
