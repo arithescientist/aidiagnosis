@@ -54,7 +54,7 @@ The data was imbalanced so I'll use ImageDataGenerator to create additional data
 * vertical_flip=False
 * zoom_range=0.2
 
-## Model
+## [Model](./app/model/)
 The network used is VGG19 because it’s known for having pretty high accuracies for image classification problems so I have no doubt it would work perfectly for my problem. After importing my VGG19 model and set the appropriate weights for the type of images in the dataset and set the Include Top parameter to false. This will ensure that the last layer is drop and I did this because I don’t want to classify thousand different categories when my specific problem only has two categories. So, for this I skip the last layer. The first layer is also dropped since I can simply provide my own image size as I did.
 
 After that, I inserted the images using flow. My parameters are; 32 images should be used for training at a given instance (batch size), my image size is 64 X 64.
@@ -91,7 +91,7 @@ The recall percentage is 98% and this is the probability of the model diagnosing
 
 The model loss is 0.04 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
-  <img src='images/loss_covid.PNG' width='50%'/>
+  <img src='images/loss_covid.PNG' width='80%'/>
 
 The AUC score is 0.98 and this is the average probability that the model can diagnose each X-ray image correctly.
 
@@ -106,7 +106,7 @@ The recall percentage is 95% and this is the probability of the model diagnosing
 
 The model loss is 0.14 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
-  <img src='images/loss_pne.PNG' width='50%'/>
+  <img src='images/loss_pne.PNG' width='80%'/>
 
 The AUC score is 0.95 and this is the average probability that the model can diagnose each X-ray image correctly.
 
@@ -121,7 +121,7 @@ The recall percentage is 95% and this is the probability of the model diagnosing
 
 The model loss is 0.14 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
-  <img src='images/loss_pvc.PNG' width='50%'/>
+  <img src='images/loss_pvc.PNG' width='80%'/>
 
 The AUC score is 0.95 and this is the average probability that the model can diagnose each X-ray image correctly.
 
