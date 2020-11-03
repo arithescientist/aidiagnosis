@@ -22,33 +22,32 @@
 				<!-- Browser tab name -->
 				<title>{{ title }}</title>
 				<!-- Navbar -->
-				<div class="ui attached inverted menu">
+				<div class="ui attached inverted menu"  style="max-width:100%;">
 				  	{{ m.nav_link('index', 'Home') }}
-				  	{{ m.nav_link('map', 'Map') }}
 					{{ m.nav_link('demo', 'Demo') }}
-          <div class="item">
-             <a href="#price">Price</a>
-          </div>
-           <div class="item">
-             <a href="#contact">Contact</a>
-          </div>
+          			<div class="item" style="max-width:100%;">
+            			 <a href="#price">Price</a>
+          			</div>
+           			<div class="item" style="max-width:100%;">
+            			 <a href="#contact">Contact</a>
+          			</div>
     					
-				 	<div class="right menu">
+				 	<div class="right menu" style="max-width:100%;">
 				 		<!-- User is logged in -->
 				      	{% if current_user.is_authenticated %}
-				      		<div class="item">
+				      		<div class="item" style="max-width:100%;">
 				        		<a class="ui primary button" href="/user/account">{{ current_user.full_name }}</a>
 				    		</div>
-				    		<div class="item">
+				    		<div class="item" style="max-width:100%;">
 				        		<a class="ui default button" href="/user/signout">Sign out</a>
 				    		</div>
 			          	<!-- User is not logged in -->
 			          	{% else %}
 						
-			          		<div class="item">
+			          		<div class="item" style="max-width:100%;">
 				        		<a class="ui primary button" href="/user/signin">Sign in</a>
 				    		</div>
-				    		<div class="item">
+				    		<div class="item" style="max-width:100%;">
 				        		<a class="ui default button" href="/user/signup">Sign up</a>
 				    		</div>
 						{% endif %}
@@ -90,32 +89,52 @@
   content: "";
   display: table;
   clear: both;
-}
+
 </style>
+
+<script>   
+    url = 'https://github.com/mozilla/pdf.js/blob/master/test/pdfs/tracemonkey.pdf';
+    var thePdf = null;
+    var scale = 3;
+
+    PDFJS.getDocument(url).promise.then(function(pdf) {
+        thePdf = pdf;
+        viewer = document.getElementById('pdf-viewer');
+
+        for(page = 1; page <= pdf.numPages; page++) {
+          canvas = document.createElement("canvas");    
+          canvas.className = 'pdf-page-canvas';         
+          viewer.appendChild(canvas);            
+          renderPage(page, canvas);
+        }
+    });
+
+    function renderPage(pageNumber, canvas) {
+        thePdf.getPage(pageNumber).then(function(page) {
+          viewport = page.getViewport(scale);
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;          
+          page.render({canvasContext: canvas.getContext('2d'), viewport: viewport});
+    });
+    }
+</script>
 </head>
-</body>
-
-
-<body>	
-
 
 	{% block content %}{% endblock %}
+
+
 	<br>
-	<div>
-		<img src="https://i.imgur.com/muKQIbN.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/F7zU93f.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/WoxeZGq.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/mBvR94s.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/2xDRND9.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/OYwjoLN.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/0k9ME5x.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/Y6Sghnn.jpg" width="75%" height="50%">
-		<img src="https://i.imgur.com/zffoBT0.jpg" width="75%" height="50%">
-	</div>
+		<div>
+		<center>
+			<object data="{{ url_for('static', filename='pdfs/web/Clinical Case of Lung Disease.pdf') }}" type="application/pdf" width="100%" height="100%" id="pdf-viewer">
+			</object>
+		</center>
+		</div>
+
 <br>
 <a id="price">
 <h2><font color='white'>Choose a Plan!</font></h2>
-<h7><font color='white'>Privacy Guranteed</font></h7>
+
 </a>
 <div class="row">
   <div class="column" style="background-color:#FDFDFE;">
@@ -171,6 +190,7 @@
 	<body>
 
    		</div>
+
 		<div id="footer" style="background-color:#FDFDFE;">
 			<div class="ui divider"></div>
 	    		<div class="ui divided horizontal footer link list">
@@ -179,7 +199,7 @@
 			        	Ari Iwunze
 			      	</div>
 			      	<div class="item" style="background-color:#FDFDFE;">
-			        	<a href="https://github.com/ariavathlete/aidiagnosis"><i class="github icon"></i></a> 
+			        	<a href="https://https://github.com/ariavathlete"><i class="github icon"></i></a> 
 
 			      	</div>
 
@@ -249,6 +269,20 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+  #pdf-viewer {
+    width: 100%;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: auto;
+  }
+
+  .pdf-page-canvas {
+    display: block;
+    margin: 5px auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+
 </style>
 </head>
 
@@ -259,7 +293,7 @@ input[type=submit]:hover {
   </div>
   <div class="row">
       <div class="columns">
-        <img src="https://i.imgur.com/NREc99t.png" style="width:100%">
+        <img src="{{ url_for('static', filename='img/blue.PNG') }}" width="100%" height="100%">
       </div>
       <div class="columns">
         <form action="/contact" method='POST'>

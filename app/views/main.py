@@ -178,14 +178,14 @@ def uploaded_pneumonia():
     status = ""
     message= ""
     result = ""
-    if probability[0] < 0.5:
-        pred = str('%.2f' % ((1-probability[0])*100) + '% PNEUMONIA') 
+    if probability[0] > 0.5:
+        pred = str('%.2f' % ((probability[0])*100) + '% PNEUMONIA') 
         color = "danger"
         status = "Pneumonia"
         message="The Model found it "
         result = "Pneumonia Positive "
     else:
-        pred = str('%.2f' % ((probability[0])*100) + '% NON-PNEUMONIA')
+        pred = str('%.2f' % ((1-probability[0])*100) + '% NON-PNEUMONIA')
         color = "success"
         status = "Normal"
         message="The Model found it "
