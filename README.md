@@ -84,17 +84,17 @@ After that, I inserted the images using flow. My parameters are; 32 images shoul
 I go on and apply the same parameters I used for my training dataset to my test dataset and then I call my fit 100 epochs.
 
 ## [Covid-19 Models Results](./covid_vs_normal.ipynb)
-The accuracy is 98 % and this is the amount of time the predicted result is actually correct.
+The accuracy is 99% and this is the amount of time the predicted result is actually correct.
 
-The recall percentage is 98% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
+The recall percentage is 99% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
 
   <img src='images/cm_covid.PNG' width='50%'/>
 
-The model loss is 0.04 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.03 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
   <img src='images/loss_covid.PNG' width='80%'/>
 
-The AUC score is 0.98 and this is the average probability that the model can diagnose each X-ray image correctly.
+The AUC score is 0.99 and this is the average probability that the model can diagnose each X-ray image correctly.
 
   <img src='images/roc_covid.PNG' width='50%'/>
   
@@ -105,7 +105,7 @@ The recall percentage is 95% and this is the probability of the model diagnosing
 
   <img src='images/cm_pne.PNG' width='50%'/>
 
-The model loss is 0.14 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.17 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
   <img src='images/loss_pne.PNG' width='80%'/>
 
@@ -114,24 +114,26 @@ The AUC score is 0.95 and this is the average probability that the model can dia
   <img src='images/roc_pne.PNG' width='50%'/>
 
 ## [Pneumonia vs Covid-19 Models Results](./pneumonia_vs_covid.ipynb)
-The accuracy is 95 % and this is the amount of time the predicted result is actually correct.
+The accuracy is 98% and this is the amount of time the predicted result is actually correct.
 
-The recall percentage is 95% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
+The recall percentage is 97% and this is the probability of the model diagnosing a correct positive diagnosis out of all the times it diagnosed positive. This would be the best metric in this case as we would rather give a wrong positive diagnosis than give a wrong negative diagnosis.
 
   <img src='images/cm_pvc.PNG' width='50%'/>
 
-The model loss is 0.14 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.07 out and this is the amount the model penalizes for incorrect predictions ~ 10%
 
   <img src='images/loss_pvc.PNG' width='80%'/>
 
-The AUC score is 0.95 and this is the average probability that the model can diagnose each X-ray image correctly.
+The AUC score is 0.97 and this is the average probability that the model can diagnose each X-ray image correctly.
 
   <img src='images/roc_pvc.PNG' width='50%'/>
 
 ### Recommendation
-The recall score will be the main metric for this project since it’s the most important metric in medical problems given that - doctors will rather make a wrong positive diagnosis than make a wrong negative.
+* Reshape the x-ray sizes to 64 x 64 to reduce the amount of computational time and power consumed when using the VGG19 model.
 
-Health professionals are welcomed to integrate this model, after thorough verification, into their medical software to help them correctly diagnose Covid-19.
+* Use a maxpooling layer before flatten the model and using a dense layer of 512 and also a learning rate of 0.000800000037997961 in order to get a better performing model when using the VGG19 model.
+
+* Add a dropout layer before the final dense layer to dropout half of the output from the prior dense layer using 512 nodes in order to reduce overfitting when using the VGG19 model.
 
 ## Web App Features
 - [x] User account sign up, sign in, password reset, all through asynchronous email confirmation.
