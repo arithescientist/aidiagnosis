@@ -90,7 +90,7 @@ The recall percentage is 99% and this is the probability of the model diagnosing
 
   <img src='images/cm_covid.PNG' width='50%'/>
 
-The model loss is 0.03 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.03 out and this is the amount the model penalizes for incorrect predictions.
 
   <img src='images/loss_covid.PNG' width='80%'/>
 
