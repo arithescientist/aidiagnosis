@@ -105,7 +105,7 @@ The recall percentage is 95% and this is the probability of the model diagnosing
 
   <img src='images/cm_pne.PNG' width='50%'/>
 
-The model loss is 0.17 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.17 out and this is the amount the model penalizes for incorrect predictions.
 
   <img src='images/loss_pne.PNG' width='80%'/>
 
@@ -120,7 +120,7 @@ The recall percentage is 97% and this is the probability of the model diagnosing
 
   <img src='images/cm_pvc.PNG' width='50%'/>
 
-The model loss is 0.07 out and this is the amount the model penalizes for incorrect predictions ~ 10%
+The model loss is 0.07 out and this is the amount the model penalizes for incorrect predictions.
 
   <img src='images/loss_pvc.PNG' width='80%'/>
 
@@ -131,7 +131,7 @@ The AUC score is 0.97 and this is the average probability that the model can dia
 ### Recommendation
 * Reshape the x-ray sizes to 64 x 64 to reduce the amount of computational time and power consumed when using the VGG19 model.
 
-* Use a maxpooling layer before flatten the model and using a dense layer of 512 and also a learning rate of 0.000800000037997961 in order to get a better performing model when using the VGG19 model.
+* Use a maxpooling layer before flatten the model and using a dense layer of 512 nodes and also a learning rate of 0.000800000037997961 in order to get a better performing model when using the VGG19 model.
 
 * Add a dropout layer before the final dense layer to dropout half of the output from the prior dense layer using 512 nodes in order to reduce overfitting when using the VGG19 model.
 
