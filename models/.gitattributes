@@ -1,0 +1,5 @@
+*.h5 filter=lfs diff=lfs merge=lfs -text
+modelcnd.h5 filter=lfs diff=lfs merge=lfs -text
+modelmultivgg19.h5 filter=lfs diff=lfs merge=lfs -text
+modelcnp.h5 filter=lfs diff=lfs merge=lfs -text
+modelpnd.h5 filter=lfs diff=lfs merge=lfs -text
