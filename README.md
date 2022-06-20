@@ -6,7 +6,6 @@
   
  # Table Of Contents
 * [Purpose](#purpose)
-* [Data Description](#data-description)
 * [Data Augmentation](#data-augmentation)
 * [Model](#model)
 * [Covid-19 Models Results](#covid-19-models-results)
@@ -31,14 +30,6 @@ The purpose of this research is to build a classifier that can correctly disting
 * Pneumonia is the reason for 1 out of 6 childhood death making it the leading cause of fatality in kids under 5 years.
 
 * In the United States, the death rate of pneumonia is 10 out of every 100,000 individuals and this usually the rate in most developed countries. Meanwhile, in Africa, the death rate of pneumonia is 100 out of every 100,000 individuals and this is normal in most developing countries.
-
-## Data Description
-For this research, I used the Pneumonia vs Covid-19 dataset from Kaggle’s website. I used 3,554 x-ray images of patient which were labeled by a specialist as either Covid-19 or Pneumonia. The merged dataset file can be found in the xray folder of this repository. The datasets downloaded can be found: 
-* https://www.kaggle.com/muhammadmasdar/pneumonia-virus-vs-covid19
-* https://www.kaggle.com/prashant268/chest-xray-covid19-pneumonia
-* https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
-
-  <img src='/images/kaggle.PNG' width='80%'/>
 
 
 ## Data Augmentation
