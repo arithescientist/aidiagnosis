@@ -1,9 +1,6 @@
 # iDiagnosis Flask Web App
 
-### Diagnosing Lung Diseases Using Deep Learning
-<a href="https://github.com/ariavathlete/aidiagnosis/blob/master/Clinical%20Case%20of%20Lung%20Disease.pdf">PRESENTATION</a>
-<a href="https://github.com/ariavathlete/aidiagnosis/blob/master/aiinthehealthfield.pdf">| BLOG</a>
-### WEB APP - https://davinciai.dev/idiagnosis
+### WEB APP - https://aritheanalyst.com/idiagnosis
 
   <img src='images/blue.PNG' width='50%'/>
   
